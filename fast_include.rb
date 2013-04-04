@@ -59,6 +59,6 @@ module FastInclude
   end
 end
 
-#Liquid::Template.register_tag('include', FastInclude::FastIncludeTag)
+Liquid::Template.register_tag('include', FastInclude::FastIncludeTag)
 
 # vim:set ts=8 sts=2 sw=2 tw=0 et:
