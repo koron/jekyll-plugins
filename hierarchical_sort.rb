@@ -12,7 +12,7 @@ module HierarchicalSort
     end
 
     def Utils.priority(p)
-      return p.data.has_key?('sort_priority') ? p.data['sort_priority'] : -1
+      return p.data.has_key?('sort-priority') ? p.data['sort-priority'] : -1
     end
 
     def Utils.parent(url)

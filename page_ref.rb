@@ -3,9 +3,9 @@
 #
 # USAGE:
 #
-# 1. Add page_id property to assign ID in YAML Header of target page.
+# 1. Add page-id property to assign ID in YAML Header of target page.
 #
-#     page_id: some-page-id
+#     page-id: some-page-id
 #
 # 2. Add tags in other pages or posts, those will be expanded...
 #
@@ -16,9 +16,9 @@
 #
 # USAGE:
 #
-# 1. YAML Header に page_id というタグを追加する
+# 1. YAML Header に page-id というタグを追加する
 #
-#     page_id: some-page-id
+#     page-id: some-page-id
 #
 # 2. 各ページに以下のタグを書くとURLやリンクに展開されます
 #
@@ -42,12 +42,12 @@ module PageRef
       table = {}
 
       add = lambda { |p|
-        if p.data.has_key?('page_id')
-          page_id = p.data['page_id'].strip
+        if p.data.has_key?('page-id')
+          page_id = p.data['page-id'].strip
           if table.has_key?(page_id)
             first = PageIDCollector.page_file(table[page_id])
             second = PageIDCollector.page_file(p)
-            raise "Duplicated page_id \"#{page_id}\" at \"#{first}\" and \"#{second}\""
+            raise "Duplicated page-id \"#{page_id}\" at \"#{first}\" and \"#{second}\""
           end
           table[page_id] = p
         end
